@@ -15,11 +15,13 @@ function App() {
 
   return (
     <div> 
-      <Navbar light className="container">
-        <NavbarToggler onClick={clickHandler} className="mr-2" size="md"/>
-        <NavbarBrand><Link to="/" className="navbar-brand">Steve Rivera Hernandez</Link></NavbarBrand>
-        <Collapse isOpen={!collapsed} navbar>
-          <Nav navbar>
+      <Navbar light className="container navbar bg-light fixed-bottom">
+        <NavbarToggler onClick={clickHandler} className="btn-outline-light" />
+          <NavbarBrand>
+            <Link to="/" className="navbar-brand">Steve Rivera Hernandez</Link>
+          </NavbarBrand>
+        <Collapse isOpen={!collapsed} navbar dropup>
+          <Nav navbar dropup>
             <NavItem className="dropdown-item">
               <Link to="/projects" className="nav-link">Projects</Link>
             </NavItem>
@@ -32,7 +34,7 @@ function App() {
           </Nav>
         </Collapse>
       </Navbar>
-        
+      
         <Route exact path="/" />
         <Route path="/projects" component={Projects} />
         <Route path="/about" component={About} />
