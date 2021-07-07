@@ -17,7 +17,7 @@ function App() {
         </div>
         <Link to="/projects">Projects</Link>
         <Link to="/about">About</Link>
-        <Link to ="/contact">Contactasdfasdfasdf</Link>
+        <Link to ="/contact">Contact</Link>
         
       </header>
         <Route exact path="/" />
