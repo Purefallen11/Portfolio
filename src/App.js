@@ -15,22 +15,21 @@ function App() {
 
   return (
     <div> 
-      <Navbar color="faded" light>
-        <NavbarBrand className="mr-auto">
-          <Link to="/">Home</Link>
+      <Navbar light className="container">
+        <NavbarBrand>
+          <Link to="/" className="navbar-brand">Home</Link>
         </NavbarBrand>
         <NavbarToggler onClick={clickHandler} size="lg" />
         <Collapse isOpen={!collapsed} navbar>
-          <Nav navbar size="lg">
-            <NavItem>
-              <Link to="/projects">Projects</Link>
+          <Nav className="dropdown-menu">
+            <NavItem className="dropdown-item">
+              <Link to="/projects" className="nav-link">Projects</Link>
             </NavItem>
-            
-            <NavItem>
-              <Link to="/about">About</Link>
+            <NavItem className="dropdown-item">
+              <Link to="/about" className="nav-link">About</Link>
             </NavItem>
-            <NavItem>
-              <Link to ="/contact">Contact</Link>
+            <NavItem className="dropdown-item">
+              <Link to ="/contact" className="nav-link">Contact</Link>
             </NavItem>
           </Nav>
         </Collapse>
