@@ -1,18 +1,29 @@
 import './App.css';
-import { Link, Route, Switch } from 'react-router-dom'
+import React from 'react'
+import {Link, Route, Switch } from 'react-router-dom'
+import Projects from './components/Projects'
+import About from './components/About'
+import Contact from './components/Contact'
+
+
 
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Link to="/">Home</Link>
+      <header className='App-header'>
+        <div className="logo">
+          <Link to ="/">Home</Link>
+        </div>
         <Link to="/projects">Projects</Link>
+        <Link to="/about">About</Link>
+        <Link to ="/contact">Contact</Link>
+        
       </header>
-      <Switch>
-        <Route path="/"></Route>
-        <Route path="projects"></Route>
-      </Switch>
+        <Route exact path="/" />
+        <Route path="/projects" component={Projects} />
+        <Route path="/about" component={About} />
+        <Route path="/contact" component={Contact} />
     </div>
   );
 }
