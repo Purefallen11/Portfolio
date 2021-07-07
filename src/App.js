@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react'
-import {Link, Route, Switch } from 'react-router-dom'
+import {Link, Route} from 'react-router-dom'
 import Projects from './components/Projects'
 import About from './components/About'
 import Contact from './components/Contact'
