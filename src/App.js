@@ -1,25 +1,40 @@
-import './App.css';
-import React from 'react'
-import {Link, Route} from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link, Route } from 'react-router-dom'
 import Projects from './components/Projects'
 import About from './components/About'
 import Contact from './components/Contact'
-
-
+import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem} from 'reactstrap'
 
 
 function App() {
+  const [collapsed, setCollapsed] = useState(true)
+
+  const clickHandler = () => {
+    setCollapsed(!collapsed)
+  }
+
   return (
-    <div className="App">
-      <header className='App-header'>
-        <div className="logo">
-          <Link to ="/">Home</Link>
-        </div>
-        <Link to="/projects">Projects</Link>
-        <Link to="/about">About</Link>
-        <Link to ="/contact">Contactasdfasdfasdf</Link>
-        
-      </header>
+    <div> 
+      <Navbar light className="container navbar bg-light fixed-bottom">
+        <NavbarToggler onClick={clickHandler} className="btn-outline-light" />
+          <NavbarBrand>
+            <Link to="/" className="navbar-brand">Steve Rivera Hernandez</Link>
+          </NavbarBrand>
+        <Collapse isOpen={!collapsed} navbar dropup>
+          <Nav navbar dropup>
+            <NavItem className="dropdown-item">
+              <Link to="/projects" className="nav-link">Projects</Link>
+            </NavItem>
+            <NavItem className="dropdown-item">
+              <Link to="/about" className="nav-link">About</Link>
+            </NavItem>
+            <NavItem className="dropdown-item">
+              <Link to ="/contact" className="nav-link">Contact</Link>
+            </NavItem>
+          </Nav>
+        </Collapse>
+      </Navbar>
+      
         <Route exact path="/" />
         <Route path="/projects" component={Projects} />
         <Route path="/about" component={About} />
