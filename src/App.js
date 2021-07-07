@@ -16,12 +16,10 @@ function App() {
   return (
     <div> 
       <Navbar light className="container">
-        <NavbarBrand>
-          <Link to="/" className="navbar-brand">Home</Link>
-        </NavbarBrand>
-        <NavbarToggler onClick={clickHandler} size="lg" />
+        <NavbarToggler onClick={clickHandler} className="mr-2" size="md"/>
+        <NavbarBrand><Link to="/" className="navbar-brand">Steve Rivera Hernandez</Link></NavbarBrand>
         <Collapse isOpen={!collapsed} navbar>
-          <Nav className="dropdown-menu">
+          <Nav navbar>
             <NavItem className="dropdown-item">
               <Link to="/projects" className="nav-link">Projects</Link>
             </NavItem>
